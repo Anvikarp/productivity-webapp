@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import todoRoutes from "./routes/todo.routes.js"; 
 import path from "path";
 import { connectDB } from './config/db.js';
+const PORT = process.env.PORT || 8000;
 
 dotenv.config(); 
 
@@ -26,7 +27,7 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-app.listen(8000, () => {
+app.listen(PORT, () => {
     connectDB(); 
     console.log("Server started at http://localhost:8000");
 });
