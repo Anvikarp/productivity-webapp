@@ -1,2 +1,23 @@
 @import "tailwindcss";
 
+.scrolling-text {
+  display: flex;
+  width: 200%; /* two spans side by side */
+  animation: scroll-left 30s linear infinite;
+}
+
+.scrolling-text span {
+  flex: 0 0 50%; /* each span takes up half */
+  padding-right: 2rem;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
